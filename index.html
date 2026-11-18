@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Мои задачи — To-Do List</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+
+        <!-- Заголовок -->
+        <header class="header">
+            <div>
+                <h1>Мои задачи</h1>
+                <p>Планируй свой день эффективно</p>
+            </div>
+
+            <div class="header-icon">✓</div>
+        </header>
+
+        <!-- Добавление задачи -->
+        <section class="task-form">
+
+            <div class="input-wrapper">
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="Что нужно сделать?"
+                    maxlength="128"
+                    autocomplete="off"
+                >
+
+                <p id="errorMessage" class="error-message"></p>
+
+                <div class="character-counter">
+                    <span id="charCount">0</span>/128
+                </div>
+            </div>
+
+            <button id="addTaskBtn" class="add-btn">
+                Добавить
+            </button>
+
+        </section>
+
+        <!-- Вкладки -->
+        <div class="tabs">
+
+            <button class="tab active" data-filter="all">
+                Все <span id="allCount">0</span>
+            </button>
+
+            <button class="tab" data-filter="active">
+                Активные <span id="activeCount">0</span>
+            </button>
+
+            <button class="tab" data-filter="completed">
+                Выполненные <span id="completedCount">0</span>
+            </button>
+
+        </div>
+
+        <!-- Список задач -->
+        <section class="task-section">
+
+            <ul id="taskList" class="task-list"></ul>
+
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon">✦</div>
+                <h3>Пока здесь пусто</h3>
+                <p>Добавь свою первую задачу!</p>
+            </div>
+
+        </section>
+
+        <!-- Нижняя панель -->
+        <footer class="footer">
+
+            <span id="remainingCount">
+                Осталось задач: 0
+            </span>
+
+            <button id="clearCompletedBtn" class="clear-btn">
+                Очистить выполненные
+            </button>
+
+        </footer>
+
+        <!-- Сортировка -->
+        <div class="sort-container">
+
+            <label for="sortSelect">
+                Сортировка:
+            </label>
+
+            <select id="sortSelect">
+
+                <option value="oldest">
+                    Сначала старые
+                </option>
+
+                <option value="newest">
+                    Сначала новые
+                </option>
+
+                <option value="az">
+                    По алфавиту (А–Я)
+                </option>
+
+                <option value="za">
+                    По алфавиту (Я–А)
+                </option>
+
+            </select>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
